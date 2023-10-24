@@ -16,7 +16,6 @@ public class TblProducto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idproducto;
 
 	private String codbarras;
@@ -31,7 +30,7 @@ public class TblProducto implements Serializable {
 	private double precio;
 
 	//bi-directional many-to-one association to TblCategoria
-	@ManyToOne(optional=false,cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name="idcategoria")
 	private TblCategoria tblCategoria;
 
